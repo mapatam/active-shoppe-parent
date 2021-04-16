@@ -8,7 +8,7 @@
 3.  Products api Endpoints are to serve when listing all products in store Or purchasing a product.
 4.  Store api endpoint is to serve when listing all the stores available
 5.  /actuator/** is enabled with 6 endpoints (health, info, env, loggers, configprops, prometheus) exposed to monitor the app.
-6.  Github link: origin https://github.com/mapatam/momentum.git
+6.  Github link: origin https://github.com/mapatam/active-shoppe-parent.git
 </p>
 <p>
 
