@@ -3,7 +3,7 @@
 
 <p>
 
-1.  Customer data is pre-populated to the database. 
+1.  Customer data is pre-populated to the store database. 
 2.  Customers’ active days points initial totals are already listed in the store database.
 3.  Products api Endpoints are to serve when listing all products in store Or purchasing a product.
 4.  Store api endpoint is to serve when listing all the stores available
