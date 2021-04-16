@@ -1,0 +1,51 @@
+spring:
+  profiles:
+    active:
+  resources:
+    add-mappings: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: za.co.momentum.service.persistence.CustomPhysicalNamingStrategy
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:momentum
+    username: admin
+    password: admin
+
+springfox:
+  documentation:
+    swagger:
+      #Workaround for Void return type issue https://github.com/springfox/springfox/issues/3476
+      use-model-v3: false
+
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: ALWAYS
+    info:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "health, info, env, loggers, configprops, prometheus"
+  info:
+    git:
+      mode: full
+  metrics:
+    web:
+      server:
+        auto-time-requests: true
+scrape_configs:
+  - job_name: 'spring'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['localhost:8080']
